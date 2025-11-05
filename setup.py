@@ -11,8 +11,8 @@ import os
 # Minimum dependencies required prior to installation
 INSTALL_REQUIRES = [
     "protobuf==3.20.2",
-    "omegaconf==2.1.1",
-    "hydra-core==1.1.1",
+    "omegaconf>=2.2.0,<2.4",  # Changed to be compatible with hydra-core>=1.2.0
+    "hydra-core>=1.2.0",
     "redis==3.5.3", # needed by Ray on Windows
     "rl-games==1.5.2"
 ]
