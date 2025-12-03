@@ -29,7 +29,7 @@
 
 from omniisaacgymenvs.utils.hydra_cfg.hydra_utils import *
 from omniisaacgymenvs.utils.hydra_cfg.reformat import omegaconf_to_dict, print_dict
-from omniisaacgymenvs.utils.demo_util import initialize_demo
+from omniisaacgymenvs.utils.task_util import initialize_task
 from omniisaacgymenvs.utils.config_utils.path_utils import retrieve_checkpoint_path
 from omniisaacgymenvs.envs.vec_env_rlgames import VecEnvRLGames
 from omniisaacgymenvs.scripts.rlgames_train import RLGTrainer
@@ -68,7 +68,7 @@ def parse_hydra_configs(cfg: DictConfig):
     from omni.isaac.core.utils.torch.maths import set_seed
     cfg.seed = set_seed(cfg.seed, torch_deterministic=cfg.torch_deterministic)
     cfg_dict['seed'] = cfg.seed
-    task = initialize_demo(cfg_dict, env)
+    task = initialize_task(cfg_dict, env)
 
     if cfg.wandb_activate:
         # Make sure to install WandB if you actually use this.

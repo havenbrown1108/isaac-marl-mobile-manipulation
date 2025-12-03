@@ -1,4 +1,4 @@
-"""Installation script for the 'isaacgymenvs' python package."""
+"""Installation script for the 'omniisaacgymenvs' python package."""
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -10,11 +10,16 @@ import os
 
 # Minimum dependencies required prior to installation
 INSTALL_REQUIRES = [
-    "protobuf==3.20.2",
-    "omegaconf>=2.2.0,<2.4",  # Changed to be compatible with hydra-core>=1.2.0
-    "hydra-core>=1.2.0",
+    "hydra-core",
+    "omegaconf",
+    "protobuf>=3.20.3",
+    "antlr4-python3-runtime==4.9.3",
     "redis==3.5.3", # needed by Ray on Windows
-    "rl-games==1.5.2"
+    "rl-games==1.5.2",
+    "numpy",
+    "gym",
+    "pyyaml",
+    "tensorboard"
 ]
 
 # Installation operation
